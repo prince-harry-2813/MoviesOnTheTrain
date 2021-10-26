@@ -5,6 +5,7 @@ const regex: RegExp = /<(“[^”]*”|'[^’]*’|[^'”>])*>/g; // clean summe
 
 const Details: React.FC<any> = (props) => {
   const item = props.location.state;
+  console.log(item);
   return (
     <div>
       <div className= "details">
@@ -16,10 +17,10 @@ const Details: React.FC<any> = (props) => {
           <h4>Year: {item.year}</h4>
         </div>
         <div>
-          <h4>Director (Network): {item.director}</h4>
+          <h4>Director (Network): {item.derector}</h4>
         </div>
         <div>
-          <h4>Tags: {item.genre}</h4>
+          <h4>Tags: {item.genres}</h4>
         </div>
         <div>
           <h4>Summary {item.summary}</h4>

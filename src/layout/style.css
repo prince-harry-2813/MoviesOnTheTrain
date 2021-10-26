@@ -79,16 +79,20 @@ input:focus {
   outline-color: deeppink;
 }
 
-
 /* =====================================
   -----------  Header    -----------
   ======================================== */
 
-
-
 /* =====================================
   -----------  content    -----------
   ======================================== */
+.details {
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .listContainer {
   display: flex;
   flex-basis: auto;

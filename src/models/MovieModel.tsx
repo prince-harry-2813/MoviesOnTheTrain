@@ -1,12 +1,12 @@
 import axios, { AxiosResponse } from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 export type MovieModel = {
   id: string;
   name: string;
   year?: string;
-  derector?: string;
+  derector?: {};
   imageURL?: string;
-  category?: [string];
+  genres?: string[];
   summary?: string;
 };
 const regex: RegExp = /<(“[^”]*”|'[^’]*’|[^'”>])*>/g; // clean summery from tags
@@ -24,7 +24,6 @@ const GetMovies = (): MovieModel[] => {
     axios
       .get("https://api.tvmaze.com/shows?id=0")
       .then((response: AxiosResponse<any>) => {
-        console.log(response.data);
         const fromapi = [] as MovieModel[];
         (response.data as [any]).map((i) => {
           fromapi.push({
@@ -32,7 +31,10 @@ const GetMovies = (): MovieModel[] => {
             name: i.name,
             year: i.premiered,
             imageURL: i.image.medium,
-            category: i.genres,
+            derector: i.network ? i.network.name : "",
+            genres: ((i.genres as string[]).map((element, ind) => {
+             return element = ind >= 1 ? (element = " | " + element) : element;
+            })),
             summary: (i.summary as string)
               .replaceAll(regex, "\n")
               .replace(i.name as string, ""),
@@ -50,7 +52,7 @@ const GetMovies = (): MovieModel[] => {
       return df.map((i) => {
         if (
           !movies.some((o) => {
-            return o.id == i.id;
+            return o.id === i.id;
           })
         )
           setMovie([
@@ -60,7 +62,7 @@ const GetMovies = (): MovieModel[] => {
               name: i.name,
               year: i.year,
               imageURL: i.image,
-              category: i.category,
+              genres: i.genres,
               summary: i.summary,
             },
           ]);
