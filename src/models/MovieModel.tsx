@@ -29,7 +29,7 @@ const GetMovies = (): MovieModel[] => {
           fromapi.push({
             id: i.id,
             name: i.name,
-            year: i.premiered,
+            year: (i.premiered as string).slice(0,4),
             imageURL: i.image.medium,
             derector: i.network ? i.network.name : "",
             genres: ((i.genres as string[]).map((element, ind) => {

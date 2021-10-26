@@ -1,4 +1,5 @@
 import React from 'react'
+import Form from '../components/form/Form'
 
 interface Props {
     
@@ -7,7 +8,7 @@ interface Props {
 const Create = (props: Props) => {
     return (
         <div>
-            <h1>djcdjnej</h1>
+            <Form></Form>
         </div>
     )
 }

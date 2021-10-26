@@ -1,15 +1,12 @@
-import React from 'react'
+import React from "react";
+import Form from "../components/form/Form";
 
-interface Props {
-    
-}
+const Edit: React.FC = (props) => {
+  return (
+    <div>
+      <Form></Form>
+    </div>
+  );
+};
 
-const Edit = (props: Props) => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
-
-export default Edit
+export default Edit;

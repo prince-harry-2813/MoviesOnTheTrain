@@ -1,11 +1,9 @@
-import Reactת, {useState } from "react";
+import Reactת, { useState } from "react";
 import Edit from "../../routers/Edit";
 import MovieModel from "../../models/MovieModel";
 import React from "react";
 
-
-const Form: React.FC = (Props)=> {
-
+const Form: React.FC = (Props) => {
   return (
     <div>
       <form
@@ -22,8 +20,7 @@ const Form: React.FC = (Props)=> {
       >
         <div>
           <label>
-            ID:
-            <input type="number" name="id" disabled={true} />
+            ID: <input type="number" name="id" disabled={true} />
           </label>
         </div>
         <div>

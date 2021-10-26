@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 interface props {}
 const regex: RegExp = /<(“[^”]*”|'[^’]*’|[^'”>])*>/g; // clean summery from tags
 
@@ -8,24 +8,30 @@ const Details: React.FC<any> = (props) => {
   console.log(item);
   return (
     <div>
-      <div className= "details">
+      <Link to={{ pathname: "/edit/" + item.id, state: item }}>
+        <button>Edit</button>
+      </Link>
+      <div className="details">
         <img src={item.imageURL} alt={item.name}></img>
-        <div>
+        <div className="lineDetails">
           <h1>{item.name}</h1>
         </div>
-        <div>
-          <h4>Year: {item.year}</h4>
+        <div className="lineDetails">
+          <h3>Year : </h3>
+          <h4>{item.year}</h4>
         </div>
-        <div>
-          <h4>Director (Network): {item.derector}</h4>
+        <div className="lineDetails">
+          <h3>Director/(Network) : </h3>
+          <h4>{item.derector}</h4>
         </div>
-        <div>
-          <h4>Tags: {item.genres}</h4>
+        <div className="lineDetails">
+          <h3>Tags : </h3>
+          <h4>{item.genres}</h4>
         </div>
-        <div>
-          <h4>Summary {item.summary}</h4>
+        <div >
+          <h3>Summary : </h3>
+          <h5>{item.summary}</h5>
         </div>
-        
       </div>
     </div>
   );

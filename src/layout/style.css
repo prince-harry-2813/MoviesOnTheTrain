@@ -22,7 +22,7 @@
 }
 
 #head {
-  padding: 3%;
+  padding: 1.5%;
   grid-area: head;
   display: flex;
   justify-content: center;
@@ -34,7 +34,7 @@
 
 .logo span {
   display: flex;
-  padding: 30px;
+  padding: 25px;
   color: var(--darker);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5rem;
@@ -64,8 +64,10 @@
 /* =====================================
   -----------  Input    -----------
   ======================================== */
-input[type="text"] {
-  width: 100%;
+input[type="text"],
+input[type="url"],
+input[type="number"] {
+  width: 50%;
   padding: 0.4rem 0.6rem;
   margin: 8px 0;
   box-sizing: border-box;
@@ -87,12 +89,30 @@ input:focus {
   -----------  content    -----------
   ======================================== */
 .details {
+  align-content: center;
   padding: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
 }
-
+.details img{
+  border-radius: 10px;
+  width: 400px;
+  height: 450px;
+}
+.lineDetails{
+  white-space: pre-wrap;
+  display: flex;
+}
+.lineDetails h3{
+font-weight: bolder;
+}
+.lineDetails h5{
+  font-weight: bold;
+  padding: 5%;
+  }
 .listContainer {
   display: flex;
   flex-basis: auto;
@@ -119,8 +139,8 @@ input:focus {
   cursor: pointer;
   border: 1px solid #000007;
   border-radius: 10px;
-  width: 220px;
-  height: 250px;
+  width: 250px;
+  height: 270px;
   box-shadow: 5px 5px 14px 5px rgba(0, 0, 0, 0.7);
 }
 .list-item-det {

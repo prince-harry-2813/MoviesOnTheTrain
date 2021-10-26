@@ -13,6 +13,7 @@ import Layout from "./layout/Layout";
 import List from "./components/moviesList/List";
 import Create from "./routers/Create";
 import Details from "./components/moviesList/Details";
+import Edit from "./routers/Edit";
 var state: MovieModel[] = [];
 const App: React.FC<{}> = (props) => {
   return (
@@ -28,7 +29,7 @@ const App: React.FC<{}> = (props) => {
             <Route exact path="/create" component={Create} />
             <Route exact path="/details/:id" component={Details} />
 
-            <Route path="/edit/:id"></Route>
+            <Route path="/edit/:id" component={Edit}></Route>
           </Switch>
         </Layout>
       </BrowserRouter>
