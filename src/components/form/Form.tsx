@@ -14,9 +14,7 @@ const Form: React.FC<any> = (props: any) => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(e.currentTarget.elements);
     if (!(e.currentTarget.elements as any).name.value) {
-      console.log("ERROR");
       return;
     } else {
       addToRepo(itemState);
@@ -24,11 +22,10 @@ const Form: React.FC<any> = (props: any) => {
     }
   };
 
-  console.log(props.props);
   return (
     <form onSubmit={handleSubmit}>
       <div id="idLab">
-        <label  >ID:{ itemState.id}</label>
+        <label>ID:{itemState.id}</label>
       </div>
       <div>
         <label>

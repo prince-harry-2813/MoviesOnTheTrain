@@ -6,4 +6,5 @@ export default interface IMovie {
   imageURL?: string;
   genres?: string[];
   summary?: string;
+  rating? : string;
 }

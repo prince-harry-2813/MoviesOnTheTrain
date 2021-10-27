@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import Header from "./Header";
 import "./style.css";
 
@@ -7,6 +8,7 @@ const Layout: React.FC<{}> = (props) => {
     <div className="container">
       <Header />
       {props.children}
+      <Footer/>
     </div>
   );
 };

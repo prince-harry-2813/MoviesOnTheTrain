@@ -1,16 +1,35 @@
 import axios, { AxiosResponse } from "axios";
-import { useEffect, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 
 import IMovie from "./Movie";
 
 const regex: RegExp = /<(“[^”]*”|'[^’]*’|[^'”>])*>/g; // clean summery from tags
 
 export const addToRepo = (nItem: IMovie) => {
-  console.log(nItem);
+  var flag = true;
+  const prev = getLocal();
+  const newArr = prev.map((i) => {
+    if (i.id === nItem.id) {
+      flag = false;
+      return nItem;
+    }
+    return i;
+  });
+  if (flag) newArr.push(nItem);
+  updateLocal(newArr);
   return;
+};
+const getLocal = () => {
+  return JSON.parse(localStorage.getItem("0") as string) as IMovie[];
+};
+
+const updateLocal = (items: IMovie[]) => {
+  localStorage.setItem("0", JSON.stringify(items));
 };
 
 const GetMovies = (): IMovie[] => {
+  const [movies, setMovie] = useState<IMovie[]>([]);
+
   useEffect(() => {
     const fetchMovies = () => {
       axios
@@ -28,6 +47,7 @@ const GetMovies = (): IMovie[] => {
               summary: (i.summary as string)
                 .replaceAll(regex, "\n")
                 .replace(i.name as string, ""),
+              rating: (parseFloat(i.rating.average) / 2).toString(),
             });
           });
           setMovie(fromapi);
@@ -41,11 +61,10 @@ const GetMovies = (): IMovie[] => {
 
     return () => {};
   }, []);
-  const local = JSON.parse(localStorage.getItem("0") as string) as [];
-  console.log(local);
-  const [movies, setMovie] = useState<IMovie[]>([]);
+  const local = getLocal();
 
-  return movies;
+  if (local.length == 0) updateLocal(movies);
+  return local;
 };
 
 export default GetMovies;

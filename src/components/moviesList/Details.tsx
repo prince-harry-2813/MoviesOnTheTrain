@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import StarRating from "../star";
 const Details: React.FC<any> = (props) => {
   var item = props.location.state;
-  console.log(item);
+
+  const [rating, setrating] = useState(item.rating);
+
   return (
     <div className="details">
       <Link to={{ pathname: "/edit/" + item.id, state: item }}>
@@ -11,6 +13,13 @@ const Details: React.FC<any> = (props) => {
       </Link>
       <div className="details">
         <img src={item.imageURL} alt={item.name}></img>
+        
+        <StarRating state={item} ></StarRating>
+        
+        
+        <div className="lineDetails">
+        </div>
+
         <div className="lineDetails">
           <h1>{item.name}</h1>
         </div>
@@ -26,7 +35,7 @@ const Details: React.FC<any> = (props) => {
           <h3>Tags : </h3>
           <h4>{JSON.stringify(item.genres)}</h4>
         </div>
-        <div >
+        <div>
           <h3>Summary : </h3>
           <h5>{item.summary}</h5>
         </div>
