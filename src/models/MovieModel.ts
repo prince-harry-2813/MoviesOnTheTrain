@@ -29,7 +29,8 @@ const setLocal = (items: IMovie[]) => {
 
 const GetMovies = (): IMovie[] => {
   const [movies, setMovie] = useState<IMovie[]>([]);
-  const fetchMovies = () => {
+
+  function fetchMovies() {
     axios
       .get("https://api.tvmaze.com/shows?id=0")
       .then((response: AxiosResponse<any>) => {
@@ -53,7 +54,7 @@ const GetMovies = (): IMovie[] => {
       .catch((e: Error) => {
         console.error("ERROR! couldn't fetch data from DB", e.message);
       });
-  };
+  }
 
   useEffect(() => {
     fetchMovies();

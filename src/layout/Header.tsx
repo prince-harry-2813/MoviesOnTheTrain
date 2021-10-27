@@ -3,16 +3,17 @@ import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   return (
     <nav id="head">
+       <div className="logo">
+        <h1>Movies On The Train Menu</h1>
+      </div>
       <span>
-        <button>
-          <Link to={"/create"} className="nav-link">
+        <Link to={"/create"} className="nav-link">
+          <button>
             <div className="nav-link">Create</div>
-          </Link>
-        </button>
+          </button>
+        </Link>
       </span>
-      <span className="logo">
-        <span>Movie - Rail Menu</span>
-      </span>
+     
     </nav>
   );
 };

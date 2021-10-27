@@ -8,25 +8,28 @@
 /* ===================================== 
   -----------    Grid Layout    -----------
   ======================================== */
-.root-container{
+.root-container {
   background-color: #2a317a;
   margin: 0;
 }
 .container {
-  background-color: #2a317a;
-  background-size: 100% 100%;
+  background-color: #34375f;
+  background-size: 80% 80%;
   height: max-content;
-  color: #e6a52c;
+  color: #eaaf43;
   display: block;
   font-family: "Poppins", sans-serif;
-  grid-auto-rows: 80px 1fr 50px;
-  grid-gap: 2px;
+  grid-auto-rows: 80 px 1fr 50 px;
+  grid-gap: 2 px;
   grid-template-areas:
     "head"
     "main"
     "footer";
 }
 
+/*=====================================
+-----------  Header    -----------
+======================================== */
 #head {
   background-color: var(--white);
   padding: 0.1%;
@@ -45,12 +48,19 @@
 
   width: 100%;
   display: flex;
-  padding:0% 5%;
+  padding: 0% 5%;
   color: #2a317a;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5rem;
   letter-spacing: 2px;
   font-weight: bolder;
+}
+button {
+  color: var(--darker);
+  padding: 21% 35%;
+  border-width: inherit;
+  border-radius: 30em;
+  background-color: rgb(246 185 94);
 }
 
 #main {
@@ -71,9 +81,6 @@
 .App {
   text-align: center;
 }
-.nav-link {
-  border-radius: 40vw;
-}
 
 /* =====================================
   -----------  Input    -----------
@@ -91,7 +98,7 @@ input[type="number"] {
   border-radius: 50vw;
   background-color: #f1f1f1;
   background-size: contain;
-  -moz-box-sizing:content-box;
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -103,10 +110,6 @@ input[type="submit"] {
 input:focus {
   outline-color: #d46300;
 }
-
-/* =====================================
-  -----------  Header    -----------
-  ======================================== */
 
 /* =====================================
   -----------  content    -----------
