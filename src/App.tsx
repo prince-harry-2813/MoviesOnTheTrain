@@ -8,7 +8,7 @@ import routes from "./routers/routes";
 
 const App: React.FC<{}> = (props) => {
   return (
-    <div>
+    <div className ="root-container">
       <BrowserRouter>
         <Layout>
           <Switch>

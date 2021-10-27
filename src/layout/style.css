@@ -1,7 +1,8 @@
 :root {
   --darker: #192f32;
-  --blue: #0060af;
-  --white: #b0e9f3;
+  --blue: #2a317a;
+  --white: #f1fdff;
+  --orange: #e6a52c;
 }
 
 /* ===================================== 
@@ -9,37 +10,43 @@
   ======================================== */
 
 .container {
-  height: 100vh;
-  color: var(--darker);
+  background-color: #2a317a;
+  background-size: 100% 100%;
+  height: 100%;
+  color: #e6a52c;
   display: block;
   font-family: "Poppins", sans-serif;
   grid-auto-rows: 80px 1fr 50px;
   grid-gap: 2px;
   grid-template-areas:
     "head"
-    "main"
-    "footer";
+    "main";
 }
 
 #head {
-  padding: 1.5%;
+  background-color: var(--white);
+  padding: 0.1%;
   grid-area: head;
   display: flex;
-  justify-content: center;
   font-weight: bold;
-  align-items: center;
   box-shadow: 0 2px 5px -1px rgb(50 50 93 / 25%),
     0 1px 3px -1px rgb(0 0 0 / 30%);
+  align-items: center;
+  justify-content: space-evenly;
+  max-block-size: 150%;
 }
 
 .logo span {
+  margin: 0 3%;
+
+  width: 100%;
   display: flex;
-  padding: 25px;
-  color: var(--darker);
+  padding:0% 5%;
+  color: #2a317a;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5rem;
   letter-spacing: 2px;
-  font-weight: 700;
+  font-weight: bolder;
 }
 
 #main {
@@ -60,6 +67,9 @@
 .App {
   text-align: center;
 }
+.nav-link {
+  border-radius: 40vw;
+}
 
 /* =====================================
   -----------  Input    -----------
@@ -67,18 +77,24 @@
 input[type="text"],
 input[type="url"],
 input[type="number"] {
-  width: 50%;
+  font-weight: normal;
+  font-size: inherit;
+  margin: 1.5% 0%;
+  width: 100%;
   padding: 0.4rem 0.6rem;
-  margin: 8px 0;
   box-sizing: border-box;
-  border: none;
+  color: #220e01;
   border-radius: 50vw;
-  background-color: #ffb9ed;
-  color: var(--darker);
+  background-color: #f1f1f1;
+  background-size: contain;
+}
+input[type="submit"] {
+  padding: 3%;
+  border-radius: 40vw;
 }
 
 input:focus {
-  outline-color: deeppink;
+  outline-color: #d46300;
 }
 
 /* =====================================
@@ -88,31 +104,55 @@ input:focus {
 /* =====================================
   -----------  content    -----------
   ======================================== */
+#idLab {
+  background-color: #3f4691;
+  opacity: 0.25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50vw;
+  margin-bottom: 3%;
+}
+#submitDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formContainer {
+  display: flex;
+  padding: 5% 15%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.formContainer label {
+  padding: 2%;
+  font-weight: bold;
+}
 .details {
   align-content: center;
   padding: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin: 0% 25%;
 }
-.details img{
+.details img {
   border-radius: 10px;
-  width: 400px;
-  height: 450px;
+  width: 450px;
+  height: 500px;
 }
-.lineDetails{
+.lineDetails {
   white-space: pre-wrap;
   display: flex;
 }
-.lineDetails h3{
-font-weight: bolder;
+.lineDetails h3 {
+  font-weight: bolder;
 }
-.lineDetails h5{
+.lineDetails h5 {
   font-weight: bold;
   padding: 5%;
-  }
+}
 .listContainer {
   display: flex;
   flex-basis: auto;

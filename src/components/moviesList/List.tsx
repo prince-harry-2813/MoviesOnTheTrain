@@ -1,10 +1,11 @@
 import React from "react";
 
-import GetMovies, { MovieModel } from "../../models/MovieModel";
+import  IMovie  from "../../models/Movie";
+import GetMovies from "../../models/MovieModel";
 import Item from "./Item";
 
 const List: React.FC = (props) => {
-  const movies: MovieModel[] = GetMovies();
+  const movies: IMovie[] = GetMovies();
   return (
     <div className="listContainer">
       {movies &&

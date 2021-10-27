@@ -5,7 +5,7 @@ const Details: React.FC<any> = (props) => {
   var item = props.location.state;
   console.log(item);
   return (
-    <div>
+    <div className="details">
       <Link to={{ pathname: "/edit/" + item.id, state: item }}>
         <button>Edit</button>
       </Link>
@@ -24,7 +24,7 @@ const Details: React.FC<any> = (props) => {
         </div>
         <div className="lineDetails">
           <h3>Tags : </h3>
-          <h4>{item.genres}</h4>
+          <h4>{JSON.stringify(item.genres)}</h4>
         </div>
         <div >
           <h3>Summary : </h3>
