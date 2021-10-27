@@ -8,15 +8,7 @@ const Footer: React.FC = () => {
         flexDirection: "column",
         textAlign: "center",
       }}
-    >
-      <label>
-        {
-          <a href={"https://www.linkedin.com/in/arie-rosental"}>
-            Arie Rosental
-          </a>
-        }
-      </label>
-    </div>
+    ></div>
   );
 };
 
