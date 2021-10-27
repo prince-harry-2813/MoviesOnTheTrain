@@ -1,8 +1,4 @@
-import React, { ReactElement } from "react";
-import { Link, LinkProps } from "react-router-dom";
-import MovieModel from "../../models/MovieModel";
-import Details from "./Details";
-const regex: RegExp = /<(“[^”]*”|'[^’]*’|[^'”>])*>/g; // clean summery from tags
+import { Link } from "react-router-dom";
 
 const Item = ({ props }: any) => {
   const imagePath = props.imageURL ? props.imageURL : "";

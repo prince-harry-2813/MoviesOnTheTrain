@@ -1,60 +1,85 @@
-import Reactת, { useState } from "react";
-import Edit from "../../routers/Edit";
-import MovieModel from "../../models/MovieModel";
-import React from "react";
+import React, { ChangeEvent, SyntheticEvent, useState } from "react";
 
-const Form: React.FC = (Props) => {
+import { MovieModel } from "../../models/MovieModel";
+
+const Form: React.FC<any> = (props: any) => {
+  const [itemState, setItemState] = useState<MovieModel>(props.props);
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setItemState({ ...itemState, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+  };
+
+  console.log(props.props);
   return (
     <div>
-      <form
-        onSubmit={(e: React.SyntheticEvent) => {
-          e.preventDefault();
-          const target = e.target as typeof e.target & {
-            email: { value: string };
-            password: { value: string };
-          };
-          const email = target.email.value; // typechecks!
-          const password = target.password.value; // typechecks!
-          // etc...
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <div>
           <label>
-            ID: <input type="number" name="id" disabled={true} />
+            ID: <label>{itemState.id}</label>
           </label>
         </div>
         <div>
           <label>
             Name:
-            <input type="text" name="name" />
+            <input
+              value={itemState.name}
+              onChange={handleInputChange}
+              type="text"
+              name="name"
+            />
           </label>
         </div>
         <div>
           <label>
             year:
-            <input type="text" name="year" maxLength={4} />
+            <input
+              value={itemState.year}
+              onChange={handleInputChange}
+              type="text"
+              name="year"
+              maxLength={4}
+            />
           </label>
         </div>
         <div>
           <label>
             Derector:
-            <input type="text" name="derector" />
+            <input
+              value={itemState.derector}
+              onChange={handleInputChange}
+              type="text"
+              name="derector"
+            />
           </label>
         </div>
         <div>
           <label>
             Image URL:
-            <input type="url" name="imageUrl" />
+            <input
+              value={itemState.imageURL}
+              onChange={handleInputChange}
+              type="url"
+              name="imageURL"
+            />
           </label>
         </div>
         <div>
           <label>
             Categorys:
-            <input type="text" name="Category" />
+            <input
+              value={itemState.genres}
+              onChange={handleInputChange}
+              type="text"
+              name="genres"
+            />
           </label>
         </div>
         <div>
-          <input type="submit" value="Log in" />
+          <input type="submit" value="Submit" />
         </div>
       </form>
     </div>

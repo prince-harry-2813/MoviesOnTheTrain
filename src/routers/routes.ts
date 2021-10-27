@@ -1,5 +1,5 @@
-import App from "../App";
 import Details from "../components/moviesList/Details";
+import List from "../components/moviesList/List";
 import Create from "./Create";
 import Edit from "./Edit";
 import IRoute from "./route";
@@ -8,20 +8,20 @@ const routes: IRoute[] = [
   {
     path: "/",
     name: "home",
-    component: App,
+    component: List,
     exact: true,
   },
   {
     path: "/details/:id",
     name: "details",
     component: Details,
-    exact: false,
+    exact: true,
   },
   {
     path: "/edit/:id",
     name: "edit",
     component: Edit,
-    exact: false,
+    exact: true,
   },
   {
     path: "/create",

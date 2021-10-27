@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-interface props {}
-const regex: RegExp = /<(“[^”]*”|'[^’]*’|[^'”>])*>/g; // clean summery from tags
 
 const Details: React.FC<any> = (props) => {
-  const item = props.location.state;
+  var item = props.location.state;
   console.log(item);
   return (
     <div>

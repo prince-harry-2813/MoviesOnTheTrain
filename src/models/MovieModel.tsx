@@ -2,9 +2,9 @@ import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 export type MovieModel = {
   id: string;
-  name: string;
+  name?: string;
   year?: string;
-  derector?: {};
+  derector?: string;
   imageURL?: string;
   genres?: string[];
   summary?: string;

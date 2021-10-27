@@ -1,16 +1,16 @@
-import React from 'react'
-import Form from '../components/form/Form'
+import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
-interface Props {
-    
-}
+import Form from "../components/form/Form";
+import { MovieModel } from "../models/MovieModel";
 
-const Create = (props: Props) => {
-    return (
-        <div>
-            <Form></Form>
-        </div>
-    )
-}
+const Create: React.FC = () => {
+  var newItem: MovieModel = { id: uuidv4() };
+  return (
+    <div className="formContainer">
+      <Form props={newItem}></Form>
+    </div>
+  );
+};
 
-export default Create
+export default Create;
