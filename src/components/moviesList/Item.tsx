@@ -14,7 +14,7 @@ const Item = ({ props }: any) => {
                 0,
                 (props.summary as string).length > 100
                   ? 100
-                  : (props.summary as string).length - 2
+                  : (props.summary as string).length - 1
               )
               .trim() + "..."}
           </div>
