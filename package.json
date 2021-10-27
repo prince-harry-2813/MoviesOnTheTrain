@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.10",
     "@types/react-router-dom": "^5.3.2",
     "@types/uuid": "^8.3.1",
+    "antd": "^4.16.13",
     "axios": "^0.24.0",
     "react": "^17.0.2",
     "react-awesome-stars-rating": "^0.6.0",
