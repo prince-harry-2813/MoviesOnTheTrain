@@ -9,7 +9,14 @@ const Item = ({ props }: any) => {
           <img className="list-item-img" src={imagePath} alt={props.name}></img>
           <div className="list-item-det">
             <h4 className="list-item-name">{props.name}</h4>
-            {(props.summary as string).slice(0, 100).trim() + "..."}
+            {(props.summary as string)
+              .slice(
+                0,
+                (props.summary as string).length > 100
+                  ? 100
+                  : (props.summary as string).length - 2
+              )
+              .trim() + "..."}
           </div>
         </Link>
       </div>

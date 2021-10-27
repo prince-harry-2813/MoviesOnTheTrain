@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import IMovie from "../../models/Movie";
-import { addToRepo } from "../../models/MovieModel";
+import { updateToRepo } from "../../models/MovieModel";
 const Form: React.FC<any> = (props: any) => {
   const [itemState, setItemState] = useState<IMovie>(props.props);
 
@@ -17,7 +17,7 @@ const Form: React.FC<any> = (props: any) => {
     if (!(e.currentTarget.elements as any).name.value) {
       return;
     } else {
-      addToRepo(itemState);
+      updateToRepo(itemState);
       history.push("/");
     }
   };
@@ -85,6 +85,18 @@ const Form: React.FC<any> = (props: any) => {
             name="genres"
             placeholder="categories: comma separated values "
           />
+        </label>
+      </div>
+      <div>
+        <label>
+          Summary:
+            {" "}
+            <input
+              value={itemState.summary}
+              onChange={handleInputChange}
+              type="text"
+              name="summary"
+            />
         </label>
       </div>
       <div id="submitDiv">

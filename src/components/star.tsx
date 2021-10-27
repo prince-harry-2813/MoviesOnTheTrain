@@ -1,5 +1,5 @@
 import React from "react";
-import { addToRepo } from "../models/MovieModel";
+import { updateToRepo } from "../models/MovieModel";
 
 const Star = ({ marked, starId }: any) => {
   return (
@@ -25,7 +25,7 @@ const StarRating: React.FC<any> = (props) => {
       onClick={(e: any) => {
         setRating(e.target.getAttribute("data-star-id") || rating);
         props.state.rating = e.target.getAttribute("data-star-id");
-        addToRepo(props.state);
+        updateToRepo(props.state);
       }}
       onMouseOver={hoverOver}
     >

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import StarRating from "../star";
 const Details: React.FC<any> = (props) => {
   var item = props.location.state;
 
-  const [rating, setrating] = useState(item.rating);
 
   return (
     <div className="details">

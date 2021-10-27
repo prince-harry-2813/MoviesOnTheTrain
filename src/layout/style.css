@@ -91,6 +91,9 @@ input[type="number"] {
   border-radius: 50vw;
   background-color: #f1f1f1;
   background-size: contain;
+  -moz-box-sizing:content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 input[type="submit"] {
   padding: 3%;
