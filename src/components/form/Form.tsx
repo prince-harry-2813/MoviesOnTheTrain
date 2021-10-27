@@ -68,6 +68,8 @@ const Form: React.FC<any> = (props: any) => {
         <label>
           Image URL:
           <input
+            required={true}
+
             value={itemState.imageURL}
             onChange={handleInputChange}
             type="url"
@@ -79,6 +81,8 @@ const Form: React.FC<any> = (props: any) => {
         <label>
           Categorys:
           <input
+            required={true}
+
             value={itemState.genres}
             onChange={handleInputChange}
             type="text"
@@ -92,6 +96,7 @@ const Form: React.FC<any> = (props: any) => {
           Summary:
             {" "}
             <input
+            required={true}
               value={itemState.summary}
               onChange={handleInputChange}
               type="text"

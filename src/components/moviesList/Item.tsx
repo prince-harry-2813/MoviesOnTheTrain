@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Item = ({ props }: any) => {
+const Item = ({ props }: any) => {;
   const imagePath = props.imageURL ? props.imageURL : "";
   return (
     <div>
