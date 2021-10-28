@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import IMovie from "../../models/Movie";
 import { updateToRepo } from "../../models/MovieModel";
-const Form: React.FC<any> = (props: any) => {
+function Form(props: any){
   const [itemState, setItemState] = useState<IMovie>(props.props);
 
   const history = useHistory();
@@ -69,7 +69,6 @@ const Form: React.FC<any> = (props: any) => {
           Image URL:
           <input
             required={true}
-
             value={itemState.imageURL}
             onChange={handleInputChange}
             type="url"
@@ -82,7 +81,6 @@ const Form: React.FC<any> = (props: any) => {
           Categorys:
           <input
             required={true}
-
             value={itemState.genres}
             onChange={handleInputChange}
             type="text"
@@ -93,15 +91,14 @@ const Form: React.FC<any> = (props: any) => {
       </div>
       <div>
         <label>
-          Summary:
-            {" "}
-            <input
+          Summary:{" "}
+          <input
             required={true}
-              value={itemState.summary}
-              onChange={handleInputChange}
-              type="text"
-              name="summary"
-            />
+            value={itemState.summary}
+            onChange={handleInputChange}
+            type="text"
+            name="summary"
+          />
         </label>
       </div>
       <div id="submitDiv">
@@ -109,6 +106,6 @@ const Form: React.FC<any> = (props: any) => {
       </div>
     </form>
   );
-};
+}
 
 export default Form;

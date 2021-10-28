@@ -49,7 +49,7 @@ const GetMovies = (): IMovie[] => {
           };
         });
         setMovie(fromapi);
-        return;
+        return setMovie(fromapi);
       })
       .catch((e: Error) => {
         console.error("ERROR! couldn't fetch data from DB", e.message);
@@ -58,9 +58,9 @@ const GetMovies = (): IMovie[] => {
 
   useEffect(() => {
     fetchMovies();
-
     return () => {};
   }, []);
+
   var local: IMovie[] | undefined;
   local = getLocalMovies();
 

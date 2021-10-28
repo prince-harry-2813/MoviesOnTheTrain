@@ -30,17 +30,35 @@
 /*=====================================
 -----------  Header    -----------
 ======================================== */
-#head {
-  background-color: var(--white);
-  padding: 0.1%;
-  grid-area: head;
-  display: flex;
-  font-weight: bold;
-  box-shadow: 0 2px 5px -1px rgb(50 50 93 / 25%),
-    0 1px 3px -1px rgb(0 0 0 / 30%);
-  align-items: center;
-  justify-content: space-evenly;
-  max-block-size: 150%;
+@media (min-width: 690px) {
+  #head {
+    background-color: var(--white);
+    padding: 0.1%;
+    grid-area: head;
+    display: flex;
+    font-weight: bold;
+    box-shadow: 0 2px 5px -1px rgb(50 50 93 / 25%),
+      0 1px 3px -1px rgb(0 0 0 / 30%);
+    align-items: center;
+    justify-content: space-evenly;
+    max-block-size: 150%;
+  }
+}
+@media (max-width: 690px) {
+  #head {
+    display: flex;
+    justify-content: space-around;
+    font-stretch: condensed;
+    padding: 1%;
+    margin: 0;
+    box-shadow: 0 2px 9px 10px rgb(5 5 17 / 19%),
+      0 1px 3px -1px rgb(0 0 0 / 30%);
+    grid-area: head;
+    border-bottom: ridge;
+    border-bottom-color: bisque;
+    border-radius: 4%;
+    align-items: center;
+  }
 }
 
 .logo span {
@@ -58,8 +76,8 @@
 button {
   color: var(--darker);
   padding: 21% 35%;
-  border-width: inherit;
-  border-radius: 30em;
+  border-radius: 30rem;
+  border: aliceblue;
   background-color: rgb(246 185 94);
 }
 
@@ -141,8 +159,9 @@ input:focus {
 }
 .ico {
   position: absolute;
-  left: 8%;
-  top: 4%;
+  left: 4%;
+  top: 3%;
+  font-size: -webkit-xxx-large;
 }
 .details {
   background-color: #ffffff1a;
@@ -206,8 +225,10 @@ input:focus {
 .list-item-det {
   position: absolute;
   left: 0;
+  width: -webkit-fill-available;
+
   bottom: 0;
-  height: 30%;
+  height: 28%;
   color: #000000;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
