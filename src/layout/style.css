@@ -159,9 +159,11 @@ input:focus {
 }
 .ico {
   position: absolute;
-  left: 4%;
+  left: 3.5%;
   top: 3%;
   font-size: -webkit-xxx-large;
+  color: #eaaf43;
+  border: #d46300;
 }
 .details {
   background-color: #ffffff1a;
@@ -244,10 +246,11 @@ input:focus {
 .nav-link {
   border: 1in, black;
 }
-* *::before *::after {
-  box-sizing: border-box;
-}
 .star {
   color: #ff9933;
   cursor: pointer;
+}
+
+* *::before *::after {
+  box-sizing: border-box;
 }
