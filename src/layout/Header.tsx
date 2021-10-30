@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   return (
-    <nav id="head">
-       <div className="logo">
+    <div id="head">
+      <div className="logo">
         <h1>Movies On The Train Menu</h1>
       </div>
       <span>
@@ -13,8 +13,7 @@ const Header: React.FC = () => {
           </button>
         </Link>
       </span>
-     
-    </nav>
+    </div>
   );
 };
 

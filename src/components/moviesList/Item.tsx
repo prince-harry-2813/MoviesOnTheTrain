@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Item = ({ props }: any) => {;
+const Item = ({ props }: any) => {
   const imagePath = props.imageURL ? props.imageURL : "";
   return (
     <div>
@@ -12,8 +12,8 @@ const Item = ({ props }: any) => {;
             {(props.summary as string)
               .slice(
                 0,
-                (props.summary as string).length > 100
-                  ? 100
+                (props.summary as string).length > 120
+                  ? 120
                   : (props.summary as string).length - 1
               )
               .trim() + "..."}

@@ -30,7 +30,7 @@
 /*=====================================
 -----------  Header    -----------
 ======================================== */
-@media (min-width: 690px) {
+@media (min-width: 600px) {
   #head {
     background-color: var(--white);
     padding: 0.1%;
@@ -44,7 +44,7 @@
     max-block-size: 150%;
   }
 }
-@media (max-width: 690px) {
+@media (max-width: 600px) {
   #head {
     display: flex;
     justify-content: space-around;
@@ -53,6 +53,7 @@
     margin: 0;
     box-shadow: 0 2px 9px 10px rgb(5 5 17 / 19%),
       0 1px 3px -1px rgb(0 0 0 / 30%);
+    font-size: x-small;
     grid-area: head;
     border-bottom: ridge;
     border-bottom-color: bisque;
@@ -235,8 +236,9 @@ input:focus {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 5%;
+  font-size: small;
   background-color: #ffffff;
-  opacity: 0.45;
+  opacity: 0.55;
   font-weight: bold;
 }
 .list-item-name {
