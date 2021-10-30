@@ -206,6 +206,10 @@ input:focus {
   transition: 0.3s all;
 }
 
+button:hover,
+.list-item:hover {
+  opacity: 0.7;
+}
 .list-item {
   font-size: 0.6rem;
   color: #f1f1f1;
@@ -236,7 +240,6 @@ input:focus {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 5%;
-  font-size: small;
   background-color: #ffffff;
   opacity: 0.55;
   font-weight: bold;
@@ -253,6 +256,8 @@ input:focus {
   cursor: pointer;
 }
 
-* *::before *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
