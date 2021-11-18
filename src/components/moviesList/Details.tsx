@@ -37,7 +37,7 @@ const Details: React.FC<any> = (props) => {
       <div>
         <h3>Summary : </h3>
         <span>
-          <h5>{item.summary}</h5>
+          <h5 className="lineDetails" >{item.summary}</h5>
         </span>
       </div>
     </div>

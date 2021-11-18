@@ -9,6 +9,7 @@
   -----------    Grid Layout    -----------
   ======================================== */
 .root-container {
+  text-shadow: 0px 0px 1px var(--darker);
   background-color: var(--blue);
   margin: 0;
 }
@@ -166,6 +167,7 @@ input:focus {
   color: #eaaf43;
   border: #d46300;
 }
+
 .details {
   background-color: #ffffff1a;
   align-content: center;
@@ -179,21 +181,26 @@ input:focus {
     inset 5px -19px 32px 6px rgba(0, 0, 0, 0.1);
   box-shadow: #fff 0 -1px 4px, inset 5px -19px 32px 6px rgba(0, 0, 0, 0.1);
 }
+@media (max-width: 600px) {
+  .details{
+  margin: 0% 1%;
+  }
+  }
 .details img {
   border-radius: 10px;
   width: 450px;
   height: 500px;
 }
 .lineDetails {
-  white-space: pre-wrap;
   display: flex;
 }
-.lineDetails h3 {
+h3.lineDetails  {
   font-weight: bolder;
 }
-.lineDetails h5 {
-  font-weight: bold;
-  padding: 5%;
+h5.lineDetails   {
+    margin: 0% 2% 5% 2%;
+    text-align: justify;
+  
 }
 .listContainer {
   display: flex;
